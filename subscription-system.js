@@ -1,7 +1,7 @@
 
 /* ---------------------------
 
-
+ 
 EARTHEN SUBSCRIPTION SYSTEM
 Version 1.0  | Febrauary 4th, 2024
 https://api.earthen.io
@@ -417,3 +417,18 @@ if (guidedTourModal && guidedTourModal.style.display !== "none") {
   }
   
   
+  function previewPrivacy() {
+    var regTexts = document.getElementById('reg-registration-texts');
+    var privacyTexts = document.getElementById('reg-privacy-texts');
+
+    // Check the current display state and toggle it
+    if (regTexts.style.display === 'none') {
+        // If the registration texts are hidden, show them and hide the privacy texts
+        regTexts.style.display = 'flex';
+        privacyTexts.style.display = 'none';
+    } else {
+        // If the registration texts are shown, hide them and show the privacy texts
+        regTexts.style.display = 'none';
+        privacyTexts.style.display = 'flex';
+    }
+}
