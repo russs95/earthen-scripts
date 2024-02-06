@@ -264,10 +264,9 @@ color:var(--subdued-text);
   }
 
 .reg-sub {
-font-family: 'Mulish'; 
-display:flex;
-    flex-flow:column;
-    color:var(--subdued-text);
+  font-family: 'Mulish'; 
+  display:flex;
+  color:var(--subdued-text);
 }
 
 .reg-sub a{
