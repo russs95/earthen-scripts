@@ -19,7 +19,7 @@ version 1.0
   transition: margin-bottom 0.3s, height 0.3s;
   overflow: hidden; 
   z-index: 25;
-  margin-bottom: -54px;
+  margin-bottom: -66px;
   display: flex;
   flex-flow: column;
 }
@@ -134,7 +134,7 @@ version 1.0
 @media screen and (max-width: 699px) {
     
   #reg-up-button {
-      margin:0px -20px 1px auto;
+      margin:0px -20px -2px auto;
   }
 
   #reg-up-button:hover {
@@ -156,7 +156,7 @@ version 1.0
 @media screen and (min-width: 700px) {
     
   #reg-up-button {
-      margin: 0px -100px 19px auto;
+      margin: 0px -100px 6px auto;
       width: 25%;
   }
 
