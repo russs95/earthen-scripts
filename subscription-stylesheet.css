@@ -275,7 +275,7 @@ text-decoration: underline;
   }
 
   .reg-sub a:hover{
-    text-decoration: underline;
+    text-decoration: none;
           color:var(--text-color);
       }
 
