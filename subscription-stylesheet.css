@@ -138,7 +138,7 @@ version 1.0
   }
 
   #reg-up-button:hover {
-      margin:0px 0px 1px auto;    
+      margin:0px 0px -2px auto;    
   }
 
   #reg-down-button {
@@ -161,7 +161,7 @@ version 1.0
   }
 
   #reg-up-button:hover {
-      margin:0px -50px 19px auto;    
+      margin:0px -50px 6px auto;    
   }
 
   #reg-down-button {
