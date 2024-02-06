@@ -178,7 +178,7 @@ version 1.0
   }
 
   #reg-up-button:hover {
-      margin:0px -50px 6px auto;    
+      margin: 0px -50px 5px auto;    
   }
 
   #reg-down-button {
@@ -358,6 +358,7 @@ text-decoration: underline;
   }
 
   .full-privacy-policy-link {
+    font-family: 'Mulish', sans-serif;
     width:fit-content;
     font-size:0.8em;
     padding:10px 15px 10px 15px;
