@@ -357,4 +357,8 @@ text-decoration: underline;
   margin-top: 5px;
   }
 
-
+  .full-privacy-policy-link {
+    width:fit-content;
+    font-size:0.8em;
+    padding:10px 15px 10px 15px;
+  }
