@@ -257,7 +257,7 @@ color:var(--subdued-text);
 
 }
 
-.reg--privacy-subtitle {
+.reg-privacy-subtitle {
   font-family: 'Mulish', sans-serif; 
   color:var(--subdued-text);
   
@@ -268,8 +268,17 @@ font-family: 'Mulish';
 display:flex;
     flex-flow:column;
     color:var(--subdued-text);
-
 }
+
+.reg-sub a{
+text-decoration: underline;
+      color:var(--subdued-text);
+  }
+
+  .reg-sub a:hover{
+    text-decoration: underline;
+          color:var(--text-color);
+      }
 
 #reg-sub-checker {
   font-size: small;
