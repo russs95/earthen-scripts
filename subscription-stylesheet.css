@@ -257,6 +257,12 @@ color:var(--subdued-text);
 
 }
 
+.reg--privacy-subtitle {
+  font-family: 'Mulish', sans-serif; 
+  color:var(--subdued-text);
+  
+  }
+
 .reg-sub {
 font-family: 'Mulish'; 
 display:flex;
@@ -285,11 +291,15 @@ display:flex;
     
     .reg-subtitle {
     font-size: 1.06em;
-    padding:10px;
+    padding:9px 0px 9px 0px;
     margin-bottom:4px;
-    
-    
     }
+
+    .reg-privacy-subtitle {
+      font-size: 0.95em;
+      padding:9px 0px 9px 0px;
+      margin-bottom:4px;
+      }
     
     .reg-sub {
     font-size: 0.96em;
@@ -309,11 +319,15 @@ display:flex;
     
     .reg-subtitle {
     font-size: 1.4em;
-    padding:12px;
+    padding:12px 0px 12px 0px;
     margin-bottom:10px;
-    
-    
     }
+
+    .reg-privacy-subtitle {
+      font-size: 1.2em;
+      padding:12px 0px 12px 0px;
+      margin-bottom:10px;
+      }
     
     .reg-sub {
     font-size: 1.1em;
