@@ -156,6 +156,7 @@ version 1.0
 
   #reg-up-button:hover {
       margin:0px 0px -2px auto;    
+      opacity: 1 !important;
   }
 
   #reg-down-button {
@@ -179,6 +180,7 @@ version 1.0
 
   #reg-up-button:hover {
       margin: 0px -50px 5px auto;    
+      opacity: 1 !important;
   }
 
   #reg-down-button {
@@ -247,7 +249,7 @@ flex-flow:column;
 }
 
 .reg-header {
-  font-family: 'Arvo',serif; 
+  font-family: 'Arvo','CooperLT', serif; 
   color:var(--h1);
 }
 
