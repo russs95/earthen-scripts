@@ -37,7 +37,7 @@ version 1.0
     .registration-footer-holder {
       background: url(webp/earthen-subscription-background-dark.webp) top center, var(--side-overlays);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   }
 
@@ -46,7 +46,7 @@ version 1.0
     .registration-footer-holder {
       background: url(webp/earthen-subscription-background-light.webp) top center, var(--top-header);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       }
     }
   
@@ -310,7 +310,7 @@ text-decoration: underline;
       }
     
     .reg-sub {
-    font-size: 0.96em;
+    font-size: 0.9em;
     padding:9px;
     }
 
@@ -338,7 +338,7 @@ text-decoration: underline;
       }
     
     .reg-sub {
-    font-size: 1.1em;
+    font-size: 1em;
     padding:10px;
  
     }
@@ -351,6 +351,9 @@ text-decoration: underline;
     width:30px;
     background: url(webp/earthen-logo-icon.webp) no-repeat;
     background-size: contain;
+    padding: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
   }
 
 
