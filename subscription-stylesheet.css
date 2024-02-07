@@ -156,7 +156,7 @@ version 1.0
 
   #reg-up-button:hover {
       margin:0px 0px -2px auto;    
-      opacity: 1 !important;
+            opacity: 1 !important;
   }
 
   #reg-down-button {
@@ -364,4 +364,11 @@ text-decoration: underline;
     width:fit-content;
     font-size:0.8em;
     padding:10px 15px 10px 15px;
+    text-decoration: underline;
+    color: var(--text-color);
+  }
+
+  .full-privacy-policy-link:a {
+    color: var(--h1);
+    text-decoration: none;
   }
