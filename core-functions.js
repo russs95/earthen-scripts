@@ -44,18 +44,27 @@ function clearSiteCache() {
 // siteName = 'YourSiteName'; // Uncomment and set the site name as needed
 
 
-
 function changeLanguage(langCode) {
     currentLanguage = langCode; // Set the global variable
     switchLanguage(currentLanguage); // Now call switchLanguage with the new currentLanguage
- }
+}
 
- 
- function switchLanguage(currentLanguage) {
+function switchLanguage(currentLanguage) {
+    // Dynamic selection of the correct translations object
+    const languageMappings = {
+        'en': en_Translations,
+        'fr': fr_Translations,
+        'es': es_Translations,
+        'id': id_Translations
+    };
+
+    const currentTranslations = languageMappings[currentLanguage];
+
     const elements = document.querySelectorAll('[data-lang-id]');
     elements.forEach(element => {
         const langId = element.getAttribute('data-lang-id');
-        const translation = translations[currentLanguage][langId];
+        // Adjusted to access the correct translations from the selected object
+        const translation = currentTranslations[langId];
         if (translation) {
             if (element.tagName.toLowerCase() === 'input' && element.type !== 'submit') {
                 element.placeholder = translation;
@@ -70,6 +79,7 @@ function changeLanguage(langCode) {
         }
     });
 }
+
 
 // function switchLanguage(currentLanguage) {
 //     const elements = document.querySelectorAll('[data-lang-id]');
