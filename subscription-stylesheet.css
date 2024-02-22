@@ -370,7 +370,13 @@ text-decoration: underline;
     color: var(--text-color);
   }
 
-  .full-privacy-policy-link:a {
-    color: var(--h1);
+  .full-privacy-policy-link a {
+    color: var(--h1) !important;
+    text-decoration: underline;
+  }
+
+  .full-privacy-policy-link a:hover {
+    color: var(--emblem-organge) !important;
     text-decoration: none;
   }
+
