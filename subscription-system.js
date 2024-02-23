@@ -20,46 +20,46 @@ function checkRegistrationStatus() {
             regTopSection.style.display = 'none';
         }
   
-        // Set the margin-top of .registration-footer-holder to 70px
-        // const registrationFooterHolder = document.querySelector('.registration-footer-holder');
-        // if (registrationFooterHolder) {
-        //     registrationFooterHolder.style.marginTop = '70px';
-        // }
     }
   }
   
-  
   let submissionPhase = 1;
-  
-  function handleFormSubmit(event) {
-      // Prevent the default form submission behavior
-      if (event) event.preventDefault();
-  
-      const form = document.getElementById("emailForm");
-      const emailInput = form.elements["email"];
-      const nameInput = form.elements["name"];
-  
-      switch (submissionPhase) {
-          case 1:
-              handlePhase1(emailInput, nameInput);
-              break;
-          case 2:
-              animateEmailInput(emailInput, nameInput);
-              break;
-          case 3:
-              checkNameInput(nameInput);
-              break;
-          case 4:
-              saveRegData2Cache(emailInput, nameInput, form);
-              break;
-          case 5:
-              sendData2WebHook(emailInput, nameInput, form);
-              break;
-          case 6:
+
+  function handleFormSubmit(event, subscriptionSource) {
+    // Prevent the default form submission behavior
+    if (event) event.preventDefault();
+
+    const form = document.getElementById("emailForm");
+    const emailInput = form.elements["email"];
+    const nameInput = form.elements["name"];
+
+    switch (submissionPhase) {
+        case 1:
+            handlePhase1(emailInput, nameInput);
+            break;
+        case 2:
+            animateEmailInput(emailInput, nameInput);
+            break;
+        case 3:
+            checkNameInput(nameInput);
+            break;
+        case 4:
+            saveRegData2Cache(emailInput, nameInput, form, 'registered on ' + subscriptionSource);
+            break;
+        case 5:
+            // Ensure some delay if needed or directly call
+            sendData2WebHook(emailInput, nameInput, form, 'registered on ' + subscriptionSource);
+            break;
+        case 6:
             sendDownRegistration();
             checkRegistrationStatus();
-      }
-  }
+            break;
+        default:
+            console.error("Invalid submission phase");
+    }
+}
+
+
   
   
   function handlePhase1(emailInput, nameInput) {
@@ -138,16 +138,16 @@ function checkRegistrationStatus() {
   
   
   
-  function saveRegData2Cache(emailInput, nameInput, form) {
-      // Store data in browser cache and log
-      const earthenRegistration = {
-          email: emailInput.value,
-          name: nameInput.value,
-          dateTimeSubmitted: new Date().toISOString(),
-          notes: 'registered on earthbook'
-      };
-      localStorage.setItem('earthenRegistration', JSON.stringify(earthenRegistration));
-      console.log(earthenRegistration);
+  function saveRegData2Cache(emailInput, nameInput, form, notes) {
+    // Use the notes parameter to set the value of 'notes'
+    const earthenRegistration = {
+        email: emailInput.value,
+        name: nameInput.value,
+        dateTimeSubmitted: new Date().toISOString(),
+        notes: notes // Use the passed notes value
+    };
+    localStorage.setItem('earthenRegistration', JSON.stringify(earthenRegistration));
+    console.log(earthenRegistration);
   
       // Animate name input to shrink to 0% width
       nameInput.style.transition = 'width 0.3s';
@@ -182,13 +182,13 @@ function checkRegistrationStatus() {
   
   }
   
-  function sendData2WebHook(emailInput, nameInput, form) {
-      // Prepare data for the webhook
-      const data = {
-          email: emailInput.value,
-          name: nameInput.value,
-          notes: 'earthbook'
-      };
+  function sendData2WebHook(emailInput, nameInput, form, notes) {
+    // Use the notes parameter to set the value of 'notes'
+    const data = {
+        email: emailInput.value,
+        name: nameInput.value,
+        notes: notes // Use the passed notes value
+    };
   
       // Log the data to be sent
       console.log('Sending data to webhook:', JSON.stringify(data));
