@@ -25,14 +25,14 @@ function checkRegistrationStatus() {
   
   let submissionPhase = 1;
 
-  function handleSubscriptionSubmit(event, subscriptionSource) {
+  function handleSubscriptionSubmit(event) {
     // Prevent the default form submission behavior
     if (event) event.preventDefault();
-    console.log(subscriptionSource);
-    const subSource = subscriptionSource;
     const form = document.getElementById("emailForm");
     const emailInput = form.elements["email"];
     const nameInput = form.elements["name"];
+    console.log(subSource);
+
 
     switch (submissionPhase) {
         case 1:
