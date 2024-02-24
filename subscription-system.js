@@ -178,17 +178,17 @@ function checkRegistrationStatus() {
   
      // Automatically move to the next phase after the UI updates
      setTimeout(() => {
-      sendData2WebHook(emailInput, nameInput, form);
+      sendData2WebHook(emailInput, nameInput, form, subSource);
   }, 300 + 10); // Adjust the timeout to match the total animation duration
   
   }
   
-  function sendData2WebHook(emailInput, nameInput, form, notes) {
+  function sendData2WebHook(emailInput, nameInput, form, subSource) {
     // Use the notes parameter to set the value of 'notes'
     const data = {
         email: emailInput.value,
         name: nameInput.value,
-        notes: notes // Use the passed notes value
+        notes: subSource // Use the passed notes value
     };
   
       // Log the data to be sent
