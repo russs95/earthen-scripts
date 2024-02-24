@@ -29,6 +29,7 @@ function checkRegistrationStatus() {
     // Prevent the default form submission behavior
     if (event) event.preventDefault();
     console.log(subscriptionSource);
+    const subSource = subscriptionSource;
     const form = document.getElementById("emailForm");
     const emailInput = form.elements["email"];
     const nameInput = form.elements["name"];
@@ -44,11 +45,11 @@ function checkRegistrationStatus() {
             checkNameInput(nameInput);
             break;
         case 4:
-            saveRegData2Cache(emailInput, nameInput, form, 'registered on ' + subscriptionSource);
+            saveRegData2Cache(emailInput, nameInput, form, subSource);
             break;
         case 5:
             // Ensure some delay if needed or directly call
-            sendData2WebHook(emailInput, nameInput, form, 'registered on ' + subscriptionSource);
+            sendData2WebHook(emailInput, nameInput, form, subSource);
             break;
         case 6:
             sendDownRegistration();
@@ -138,13 +139,13 @@ function checkRegistrationStatus() {
   
   
   
-  function saveRegData2Cache(emailInput, nameInput, form, notes) {
+  function saveRegData2Cache(emailInput, nameInput, form, subSource) {
     // Use the notes parameter to set the value of 'notes'
     const earthenRegistration = {
         email: emailInput.value,
         name: nameInput.value,
         dateTimeSubmitted: new Date().toISOString(),
-        notes: notes // Use the passed notes value
+        notes: subSource // Use the passed notes value
     };
     localStorage.setItem('earthenRegistration', JSON.stringify(earthenRegistration));
     console.log(earthenRegistration);
