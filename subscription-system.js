@@ -28,7 +28,7 @@ function checkRegistrationStatus() {
   function handleFormSubmit(event, subscriptionSource) {
     // Prevent the default form submission behavior
     if (event) event.preventDefault();
-
+    console.log(earthenRegistration);
     const form = document.getElementById("emailForm");
     const emailInput = form.elements["email"];
     const nameInput = form.elements["name"];
