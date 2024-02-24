@@ -141,7 +141,7 @@ function checkRegistrationStatus() {
   
   function saveRegData2Cache(emailInput, nameInput, form, subSource) {
     console.log("subSource in saveRegData2Cache:", subSource);
-    
+
     const earthenRegistration = {
         email: emailInput.value,
         name: nameInput.value,
