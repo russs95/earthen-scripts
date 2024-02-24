@@ -151,12 +151,12 @@ version 1.0
 @media screen and (max-width: 699px) {
     
   #reg-up-button {
-      margin:0px -20px -2px auto;
+      margin:0px -20px 6px auto;
       height: 30px;
   }
 
   #reg-up-button:hover {
-      margin:0px 0px -2px auto;    
+      margin:0px 0px 6px auto;    
             opacity: 1 !important;
   }
 
@@ -173,13 +173,13 @@ version 1.0
 
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   #reg-up-button {
-    margin: 0px -150px 6px auto;
+    margin: 0px -115px 6px auto;
     width: 25%;
     height: 40px;
 }
 
 #reg-up-button:hover {
-  margin: 0px -130px 5px auto;    
+  margin: 0px -85px 5px auto;    
   opacity: 1 !important;
 }
 
