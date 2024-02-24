@@ -31,7 +31,7 @@ function checkRegistrationStatus() {
     const form = document.getElementById("emailForm");
     const emailInput = form.elements["email"];
     const nameInput = form.elements["name"];
-    console.log(subSource);
+    console.log(window.subSource);
 
 
     switch (submissionPhase) {
@@ -140,13 +140,13 @@ function checkRegistrationStatus() {
   
   
   function saveRegData2Cache(emailInput, nameInput, form) {
-    console.log("subSource in saveRegData2Cache:", subSource);
+    console.log("subSource in saveRegData2Cache:", window.subSource);
 
     const earthenRegistration = {
         email: emailInput.value,
         name: nameInput.value,
         dateTimeSubmitted: new Date().toISOString(),
-        notes: subSource // Use the passed notes value
+        notes: window.subSource // Use the passed notes value
     };
     localStorage.setItem('earthenRegistration', JSON.stringify(earthenRegistration));
     console.log(earthenRegistration);
@@ -184,14 +184,14 @@ function checkRegistrationStatus() {
   
   }
   
-  function sendData2WebHook(emailInput, nameInput, form, subSource) {
+  function sendData2WebHook(emailInput, nameInput, form) {
     // Use the notes parameter to set the value of 'notes'
     const data = {
         email: emailInput.value,
         name: nameInput.value,
-        notes: subSource // Use the global value
+        notes: window.subSource // Use the global value
     };
-  
+    console.log('subSource before sending:', window.subSource);
       // Log the data to be sent
       console.log('Sending data to webhook:', JSON.stringify(data));
   
