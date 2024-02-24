@@ -25,7 +25,7 @@ function checkRegistrationStatus() {
   
   let submissionPhase = 1;
 
-  function handleFormSubmit(event, subscriptionSource) {
+  function handleSubscriptionSubmit(event, subscriptionSource) {
     // Prevent the default form submission behavior
     if (event) event.preventDefault();
     console.log(subscriptionSource);
@@ -83,7 +83,7 @@ function checkRegistrationStatus() {
   
       // Update submission phase to 2.1 for email animation
       submissionPhase = 2;
-      handleFormSubmit(new Event('submit')); // Proceed to animate email input
+      handleSubscriptionSubmit(new Event('submit')); // Proceed to animate email input
   
   }
   
@@ -103,7 +103,7 @@ function checkRegistrationStatus() {
         setTimeout(() => {
             nameInput.style.width = '70%';
             submissionPhase = 3;
-            // handleFormSubmit(new Event('submit')); // Proceed to check name input
+            // handleSubscriptionSubmit(new Event('submit')); // Proceed to check name input
         }, 10);
     }, 300);
   }
@@ -130,7 +130,7 @@ function checkRegistrationStatus() {
   
     // If name input is valid, proceed to the next phase
     submissionPhase = 4;
-    handleFormSubmit(new Event('submit')); // Proceed to the next phase
+    handleSubscriptionSubmit(new Event('submit')); // Proceed to the next phase
   }
   
 
@@ -140,7 +140,8 @@ function checkRegistrationStatus() {
   
   
   function saveRegData2Cache(emailInput, nameInput, form, subSource) {
-    // Use the notes parameter to set the value of 'notes'
+    console.log("subSource in saveRegData2Cache:", subSource);
+    
     const earthenRegistration = {
         email: emailInput.value,
         name: nameInput.value,
