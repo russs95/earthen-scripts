@@ -45,11 +45,11 @@ function checkRegistrationStatus() {
             checkNameInput(nameInput);
             break;
         case 4:
-            saveRegData2Cache(emailInput, nameInput, form, subSource);
+            saveRegData2Cache(emailInput, nameInput, form);
             break;
         case 5:
             // Ensure some delay if needed or directly call
-            sendData2WebHook(emailInput, nameInput, form, subSource);
+            sendData2WebHook(emailInput, nameInput, form);
             break;
         case 6:
             sendDownRegistration();
@@ -139,7 +139,7 @@ function checkRegistrationStatus() {
   
   
   
-  function saveRegData2Cache(emailInput, nameInput, form, subSource) {
+  function saveRegData2Cache(emailInput, nameInput, form) {
     console.log("subSource in saveRegData2Cache:", subSource);
 
     const earthenRegistration = {
@@ -179,7 +179,7 @@ function checkRegistrationStatus() {
   
      // Automatically move to the next phase after the UI updates
      setTimeout(() => {
-      sendData2WebHook(emailInput, nameInput, form, subSource);
+      sendData2WebHook(emailInput, nameInput, form);
   }, 300 + 10); // Adjust the timeout to match the total animation duration
   
   }
@@ -189,7 +189,7 @@ function checkRegistrationStatus() {
     const data = {
         email: emailInput.value,
         name: nameInput.value,
-        notes: subSource // Use the passed notes value
+        notes: subSource // Use the global value
     };
   
       // Log the data to be sent
