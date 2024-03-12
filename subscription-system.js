@@ -307,6 +307,9 @@ function invite2Register() {
     let showCounter = localStorage.getItem('showCounter');
     showCounter = showCounter ? parseInt(showCounter) + 1 : 1;
     localStorage.setItem('showCounter', showCounter);
+    
+    // Post the value of showCounter to the console
+    console.log(showCounter);
   }
 
   function displayCheckBoxToHideSubscription() {
