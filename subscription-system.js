@@ -3,7 +3,7 @@
 
  
 EARTHEN SUBSCRIPTION SYSTEM
-Version 1.0  | Febrauary 4th, 2024
+Version 1.1  | March 17, 2024
 https://api.earthen.io
 
 -----------------------------*/
@@ -19,9 +19,13 @@ function checkRegistrationStatus() {
         if (regTopSection) {
             regTopSection.style.display = 'none';
         }
-  
+        console.log('User is registered');
+    } else {
+        // If the user is not registered
+        console.log('User not yet registered, embarking on subscription sequence');
     }
-  }
+}
+
   
   let submissionPhase = 1;
 
@@ -31,7 +35,8 @@ function checkRegistrationStatus() {
     const form = document.getElementById("emailForm");
     const emailInput = form.elements["email"];
     const nameInput = form.elements["name"];
-    console.log(window.subSource);
+    console.log("The sub source is: " + window.subSource);
+
 
 
     switch (submissionPhase) {
@@ -146,7 +151,8 @@ function checkRegistrationStatus() {
         email: emailInput.value,
         name: nameInput.value,
         dateTimeSubmitted: new Date().toISOString(),
-        notes: window.subSource // Use the passed notes value
+        source: window.subSource, // Use the passed notes value
+        language: window.currentLanguage
     };
     localStorage.setItem('earthenRegistration', JSON.stringify(earthenRegistration));
     console.log(earthenRegistration);
@@ -189,7 +195,9 @@ function checkRegistrationStatus() {
     const data = {
         email: emailInput.value,
         name: nameInput.value,
-        notes: window.subSource // Use the global value
+        source: window.subSource, // Use the global value
+        language: window.currentLanguage
+
     };
     console.log('subSource before sending:', window.subSource);
       // Log the data to be sent
@@ -270,7 +278,7 @@ function invite2Register() {
     const earthenRegistrationData = localStorage.getItem('earthenRegistration');
     
     if (!earthenRegistrationData) {
-        updateShowCounter();
+        // updateShowCounter();
   
         let showCounter = parseInt(localStorage.getItem('showCounter'));
         let delayDuration;
@@ -302,17 +310,22 @@ function invite2Register() {
     }
   }
   
-  
+
   function updateShowCounter() {
     let showCounter = localStorage.getItem('showCounter');
     showCounter = showCounter ? parseInt(showCounter) + 1 : 1;
     localStorage.setItem('showCounter', showCounter);
-    
-    // Post the value of showCounter to the console
-    console.log(showCounter);
-  }
 
-  function displayCheckBoxToHideSubscription() {
+    // Post the value of showCounter to the console
+    console.log("showCounter: " + showCounter);
+
+    // Check if showCounter is higher than 3 and trigger the function
+    if (showCounter > 4) {
+        displayCheckBoxToHideSubscription();
+    }
+}
+
+function displayCheckBoxToHideSubscription() {
     const regSubChecker = document.getElementById('reg-sub-checker');
     if (regSubChecker) {
         regSubChecker.style.display = 'block';
@@ -340,7 +353,7 @@ var guidedTourModal = document.querySelector('#guided-tour .modal');
 // Check if the guidedTourModal is defined and visible
 if (guidedTourModal && guidedTourModal.style.display !== "none") {
     // If it's visible, show an alert and exit the function
-    alert('nope');
+    // alert('nope');
     return;
 }
 
@@ -357,6 +370,7 @@ if (guidedTourModal && guidedTourModal.style.display !== "none") {
     emailRegistration.style.display = "block";
     upArrow.style.display = "none";
     downArrow.style.display = "block";
+    updateShowCounter();
 }
 
   
@@ -386,12 +400,12 @@ if (guidedTourModal && guidedTourModal.style.display !== "none") {
 
   
       // Change the text of the checkbox div
-      checkerDiv.innerText = "Ok! You won't see the subscribe option again-- but you can always find it again in the main menu.";
+      checkerDiv.innerText = "Ok! You won't see the subscription box again. However, you can always find it again in the main menu.";
   
       // Update styles
       checkerDiv.style.backgroundColor = 'var(--emblem-blue)';
-      checkerDiv.style.color = 'var(--main-background)';
-      checkerDiv.style.fontSize = 'normal';
+      checkerDiv.style.color = 'var(--h1)';
+      checkerDiv.style.fontSize = 'large';
       explaDiv.style.display = 'none';
   
       // Show this text for 2 seconds, then call sendDownRegistration
@@ -401,7 +415,7 @@ if (guidedTourModal && guidedTourModal.style.display !== "none") {
         checkerDiv.style.color = 'var(--text-color)';
         checkerDiv.style.fontSize = 'small';
         explaDiv.style.display = 'block';
-      }, 8000);
+      }, 4000);
   
       // Check for earthenRegistration in browser cache
       if (localStorage.getItem('earthenRegistration')) {
