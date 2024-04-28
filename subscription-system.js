@@ -3,7 +3,7 @@
 
  
 EARTHEN SUBSCRIPTION SYSTEM
-Version 1.1  | March 17, 2024
+Version 1.1  | April 28, 2024
 https://api.earthen.io
 
 -----------------------------*/
@@ -203,8 +203,8 @@ function checkRegistrationStatus() {
       // Log the data to be sent
       console.log('Sending data to webhook:', JSON.stringify(data));
   
-      // Send data to the webhook
-      fetch('https://hook.eu1.make.com/xtlexd0girt9ua3hnsfuzwlrjgrsmqgt', {
+      // Send data to the webhook for Tracatus Ayyew
+      fetch('https://hook.eu1.make.com/s48m91tiktmt4y8osnh4oht1cfatuqh9', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
