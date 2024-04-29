@@ -203,7 +203,7 @@ function checkRegistrationStatus() {
       // Log the data to be sent
       console.log('Sending data to webhook:', JSON.stringify(data));
   
-      // Send data to the webhook for Tracatus Ayyew
+      // Send data to the webhook for Tractatus Ayyew 
       fetch('https://hook.eu1.make.com/s48m91tiktmt4y8osnh4oht1cfatuqh9', {
           method: 'POST',
           headers: {
