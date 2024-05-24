@@ -1,0 +1,470 @@
+
+/*------------------------------
+
+BOOK NOTE PALETTE 
+
+--------------------------------------*/
+
+
+#bookNotePalette {
+  position: fixed;  /* Changed from absolute to fixed */
+  bottom: -500px; 
+  background: var(--header-footer);
+  border: 1px solid;
+  border-color: var(--thin-border-color);
+  box-shadow: var(--element-shadow);
+  transition: bottom 0.5s;
+  height: 450px;
+  z-index: 20; /* This ensures the palette is above other page content */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-pallette-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+@media screen and (max-width: 700px) {
+
+#bookNotePalette { 
+  width: 380px;
+  border-radius: 25px 25px 0px 0px;
+}
+}
+
+@media screen and (min-width: 700px) and (max-width: 1324px) {
+  
+  #bookNotePalette {
+      width: 700px;
+      border-radius:  25px 25px 0px 0px;
+      padding: 10px;
+}
+#eco-icon-footer {
+  flex-grow:4; 
+  text-align: right;
+}
+}
+
+@media screen and (min-width: 1325px) {
+  #bookNotePalette {
+      width: 750px;
+      border-radius:  25px 25px 0px 0px;
+}
+
+}
+
+#closePalette {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+.pallette-btn { 
+  border: var(--thin-border-color);
+  border-style: solid;
+  border-width: 0.25px;
+  border: none;
+  color: var(--subdued-text);
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer; 
+  display: block;
+  font-size: 1em;
+  margin: 10px 5px auto 5px;
+  width: fit-content;
+  height: 40px;
+  border-radius: 15px;
+  background-size: 25px;
+  transition: 0.3s; /* Repeated property, consider consolidating with the other transition property */
+}
+
+
+.quotation-btn { 
+  border: var(--thin-border-color);
+  border-style: solid;
+  border-width: 0.25px;
+  border: none;
+  color: var(--text-color);
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+  display: block;
+  font-size: 1em;
+  width: fit-content;
+  height: 40px;
+  border-radius: 15px;
+  background-size: 25px;
+  transition: 0.3s; /* 
+    margin: 10px 10px auto 10px;
+Repeated property, consider consolidating with the other transition property */
+}
+
+.highlight-buttons { 
+  /* Adjust border properties as required */
+  background-color: var(--nav-bar-accent);
+  color: var(--text-color);
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer; 
+  padding: 10px;
+  font-size: 1em;
+  margin: 5px 10px auto 10px;
+  width: fit-content;
+  height: 30px;
+  border-radius: 15px;
+  display: flex; 
+  padding: 10px 15px 10px 40px;
+  background: var(--nav-bar-accent) url(icons/save.svg) 15px center no-repeat;
+  background-size: 21px;
+}
+
+#annotate-button {
+  padding: 8px 15px;
+  cursor:pointer;
+  margin-right:8px;
+}
+
+.color-btn { 
+  border: var(--thin-border-color);
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 1px;
+  transition: 0.3s;
+  cursor: pointer; 
+  display: block;
+  padding: 0px 10px 0px 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .color-btn { 
+  width: 30px;
+  height:30px;
+  border-radius: 20px;
+  margin: auto 10px;
+}
+.pallette-btn { 
+  flex-grow: 1;
+  padding: 10px 10px 10px 10px;
+  font-size:medium;
+}
+
+.quotation-btn { 
+  flex-grow: 1;
+  padding: 10px 5px 10px 20px;
+  font-size:medium;
+}
+
+}
+
+@media screen and (min-width: 700px) {
+  .color-btn { 
+  width: 30px;
+  height:30px;
+  border-radius: 25px;
+  margin: auto auto;
+}
+.highlight-buttons { 
+  flex-grow: 4;
+}
+.pallette-btn { 
+  flex-grow: 1;
+  padding: 10px 15px 10px 40px;
+  font-size:medium;
+}
+.quotation-btn { 
+  flex-grow: 1;
+  padding: 10px 15px 10px 40px;
+  font-size:medium;
+}
+}
+
+#copyBtn {
+    background-size: 25px;
+    transition: 0.3s;
+    background: var(--deeper-accent-color) url(icons/copy.svg) 17px center no-repeat;
+    background-size: 21px;
+    margin-right: 10px;
+
+}
+
+#copyBtn2 {
+  background-size: 25px;
+  transition: 0.3s;
+  background: var(--deeper-accent-color) url(icons/copy.svg) 17px center no-repeat;
+  background-size: 21px;
+  margin-right: 10px;
+}
+
+
+#citeBtn {
+  background-size: 25px;
+  transition: 0.3s;
+  background: var(--deeper-accent-color) url(icons/cite.svg) 15px center no-repeat;
+  background-size: 21px;
+  margin-left: 10px;
+
+}
+
+#saveBtn {
+  background-size: 25px;
+  transition: 0.3s;
+  background-size: 21px;
+  width: 100%;
+  border: none;
+  color: var(--text-color);
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer; 
+  font-size: 1em;
+  margin: 0px 0px 15px 0px;
+  height: fit-content;
+  border-radius: 15px;
+  display: flex; 
+  padding: 14px 15px 14px 15px;
+  background: var(--deeper-accent-color) url(icons/save.svg) 15px center no-repeat;
+  background-size: 21px;
+
+}
+
+#clearBtn {
+  background-size: 25px;
+  transition: 0.3s;
+  background: var(--deeper-accent-color) url(icons/clear.svg) 15px center no-repeat;
+  background-size: 21px;
+
+}
+
+#viewBooknotesBtn {
+  background-size: 25px;
+  transition: 0.3s;
+  background: var(--deeper-accent-color) url(icons/view-booknotes.svg) 15px center no-repeat;
+  background-size: 21px;
+
+}
+
+
+#booknotesBtn {
+    background-size: 25px;
+    transition: 0.3s;
+    background: var(--deeper-accent-color) url(icons/booknotes-old.svg) 15px center no-repeat;
+    background-size: 21px;
+}
+ 
+.pallette-text {
+  color:var(--subdued-text);
+        font-family: 'Mulish', Arial, Helvetica, sans-serif;
+        text-align: center;
+        text-decoration: none;
+}
+
+@media screen and (min-width: 701px) {
+  .pallette-text {
+    font-size: 1em;  
+    margin: auto 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .pallette-text {
+    display: none !important;
+  }
+}
+
+
+button:hover {
+  opacity: 0.7;
+}
+
+
+
+
+.annotation-hidden {
+  position: fixed;
+  bottom: -600px; /* 200px from #bookNotePalette + 400px of this div */
+  width: 750px;
+  height: 400px;
+  background: var(--header-footer);
+  border: 1px solid;
+  border-color: var(--thin-border-color);
+  border-top: none;
+  box-shadow: var(--element-shadow);
+  transition: bottom 0.5s;
+  z-index: 21; /* One level above the palette */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+textarea#userAnnotation {
+  width: 90%;
+  width: -moz-available;
+  height: 250px;
+  padding: 10px;
+  resize: none;
+  border: 1px solid var(--thin-border-color);
+  border-radius: 5px;
+  margin-bottom: 15px;
+font-size: 1.5em;
+background: var(--background-color);
+color: var(--text-color);
+}
+
+.user-annotation {
+font-size: medium;
+background: #80808026;
+padding: 20px;
+border-radius: 10px;
+margin-bottom: 0px;
+font-size: 1.5em;
+display: flex;
+flex-flow: row;
+color: var(--subdued-text);
+}
+
+
+/* BOOKNOTES HIGHLIGHT VIEWER  */
+
+
+#highlight-viewer {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.highlight-viewer-content {
+  display:flex;
+  width:80%;
+  margin:auto;
+  height:100%;
+  flex-flow:column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 699px) {
+  .highlight-viewer-content {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1324px) {
+  .highlight-viewer-content {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1324px) {
+  .highlight-viewer-content {
+    width: 60%;
+  }
+}
+
+
+
+#close-x {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  cursor: pointer;
+  font-family: 'Mulish';
+  color: var(--text-color);
+  font-size: 3em;
+}
+
+#close-x:hover {
+color: grey;
+}
+
+#quotation-title {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: 'Mulish';
+  color: var(--text-color);
+  font-size: medium;
+  display: flex;
+}
+/*
+.highlight-color {
+  font-size: larger;
+  padding: 15px;
+}
+
+#the-quote.highlight-blue {
+  background-color: blue; 
+}
+
+#the-quote.highlight-green {
+  background-color: green; 
+}
+
+*/
+
+.quotation-box {
+margin: 150px auto 30px auto;
+max-width: 100%;
+display: flex;
+flex-flow: row;
+height: fit-content;
+}
+
+#the-quote  {
+  font-size: 1.9em;
+line-height: 1.3;
+width: 100%;
+height: fit-content;
+overflow-y: clip;
+}
+
+.quote-info {
+  font-family: 'Mulish', sans-serif;
+  text-align: left;
+  width: 600px;
+  margin: 20px auto 10px auto;
+}
+
+#userNote {
+  font-family: 'Mulish', sans-serif;
+  font-size: medium;
+  margin-top: auto;
+  margin-bottom:20px;
+}
+
+.quotation-button-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 50px 0px;
+}
+
+.action {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.action:hover {
+  background-color: #555;
+}
+
+
