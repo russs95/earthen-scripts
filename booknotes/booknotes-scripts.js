@@ -156,9 +156,9 @@ document.addEventListener('touchend', function(event) {
 
 
 /*COPY TEXT */
-document.getElementById('copyBtn').addEventListener('click', function() {
-    copyToClipboard(lastSelectedText);
-});
+//document.getElementById('copyBtn').addEventListener('click', function() {
+//    copyToClipboard(lastSelectedText);
+//});
 
 
 
