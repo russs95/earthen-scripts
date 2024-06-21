@@ -5,7 +5,7 @@ class bookNotes extends HTMLElement {
   
 
 //     <button aria-label="Copy Selection" id="copyBtn" class="pallette-btn">
-//     <div class="pallette-text">Copy</div>
+//     <div class="pallette-text">Copy</div>  CMON GUYSS!!
 //    </button> 
 
     connectedCallback() {
@@ -14,11 +14,7 @@ class bookNotes extends HTMLElement {
   
 <div id="booknotes-curtain" class="overlay-tc">
 
-/*<div class="top-close-button">
-    <a href="index.html"><img src="../icons/home.svg" alt="Bouton d'accueil" style="padding-right:10px;padding-left:10px;"></a>
-    <img src="../svgs/bottom-x.svg" alt="Fermer le bouton" style="padding-left:10px;cursor:pointer" onclick="closeBooknotes()">
-    <img src="../icons/search.svg?v=3" alt="Rechercher" style="padding-left:12px;padding-right:15px;cursor:pointer" onclick="closeBooknotes(), openSearch()">
-</div>*/
+
    
 <div class="overlay-content-tc" style="min-height:80%;">
 
@@ -112,17 +108,6 @@ class bookNotes extends HTMLElement {
     </div>
 </div>
 
-
-
-<!-- CHAPT NOTICE-->
-
-
-<div id="chap-notice">
-<div id="close-notice" onclick="closeWelcomeNotice()">&times;</div>
-<div id="chap-notice-text">
-💡  Looks like its your first time opening this book!  Before you get going, consider taking the quick <a class="java-link" onclick="guidedTour(), closeWelcomeNotice()" aria-label="Open About Screen" title="Learn more about what an Earthbook is">Earthbook features tour</a> and be sure to <a class="java-link" onclick="openSettings(), closeWelcomeNotice()" aria-label="Open Settings" title="Adjust for your eyes">optimize ±</a> the page for your eyes.
-</div>
-</div>
 
 
 

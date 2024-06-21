@@ -884,7 +884,7 @@ function viewHighlightInfo(bookNoteId) {
     if (highlight) {
 
      // Add the blur class to the underlayer
-     document.getElementById("underlayer").classList.add("blur");
+//     document.getElementById("underlayer").classList.add("blur");
         const quoteContainer = document.getElementById("the-quote");
         
         // Added code to wrap content with <span> and appropriate class
@@ -944,7 +944,7 @@ document.getElementById("close-x").addEventListener("click", function() {
     document.getElementById("highlight-viewer").style.display = "none";
     
     // Remove the blur class from the underlayer
-    document.getElementById("underlayer").classList.remove("blur");
+//    document.getElementById("underlayer").classList.remove("blur");
 });
 
 
@@ -970,7 +970,7 @@ document.getElementById("copyBtn").addEventListener("click", function() {
     setTimeout(() => {
         document.getElementById("highlight-viewer").style.display = "none";
         // Remove the blur class from the underlayer
-        document.getElementById("underlayer").classList.remove("blur");
+//        document.getElementById("underlayer").classList.remove("blur");
     }, 2000);
 
     // Wait for 3 seconds, then revert the button text and background
@@ -1034,7 +1034,7 @@ document.getElementById("clearBtn").addEventListener("click", function() {
     setTimeout(() => {
         document.getElementById("highlight-viewer").style.display = "none";
         // Remove the blur class from the underlayer
-        document.getElementById("underlayer").classList.remove("blur");
+//        document.getElementById("underlayer").classList.remove("blur");
     }, 900);
 
     // Wait for 3 seconds, then revert the button text and background
@@ -1087,7 +1087,7 @@ document.getElementById("citeBtn").addEventListener("click", function() {
     setTimeout(() => {
         document.getElementById("highlight-viewer").style.display = "none";
         // Remove the blur class from the underlayer
-        document.getElementById("underlayer").classList.remove("blur");
+//        document.getElementById("underlayer").classList.remove("blur");
     }, 2000);
 
     // Wait for 3 seconds, then revert the button text and background
@@ -1141,7 +1141,7 @@ function appendAnnotation2() {
     setTimeout(() => {
         saveButton.textContent = "Save Annotation";
         document.getElementById("highlight-viewer").style.display = "none";
-        document.getElementById("underlayer").classList.remove("blur");
+//        document.getElementById("underlayer").classList.remove("blur");
         saveButton.style.removeProperty("background-color");
         saveButton.style.removeProperty("color");
         document.getElementById("userNote").value = "";  // Clear out the textarea
