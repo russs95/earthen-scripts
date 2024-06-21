@@ -110,6 +110,46 @@ class bookNotes extends HTMLElement {
 
 
 
+<!--HIGHLIGHTER-->
+
+
+<div id="highlight-viewer" class="modal" style="background:var(--highlight-modal);">
+  <div id="quotation-title">Your BookNote &nbsp;<div id="bookNoteID"></div></div>
+  <div id="close-x">&times;</div>
+  <div class="highlight-viewer-content">
+
+    <div class="quotation-box">
+
+        <div id="the-quote"></div>
+
+    </div>
+
+    <div class="quote-info">
+      <span style="font-size:small; color:grey;padding-bottom:10px;">Highlight source:</span>
+      <div style="font-size:medium;padding-bottom:10px;">
+        <div id="noteChapter"></div>
+        <div id="book"></div>
+
+      </div>
+        <div id="date" style="font-size:small"></div>
+        <div id="charCount" style="font-size:small"></div>
+        <div id="publicNote" style="font-size:small"></div>
+
+
+    </div>
+    <textarea id="userNote" class="user-annotation" placeholder="Click to annotate this highlight..."></textarea>
+
+    <button id="saveBtn" aria-label="Save" onclick="appendAnnotation2()">Save Annotation</button>
+    <div class="quotation-button-row">
+      <button aria-label="Copier la sélection" id="copyBtn" class="quotation-btn" class="pallette-text">Copy
+      </button>
+      <button id="clearBtn" aria-label="Clear Highlight" class="quotation-btn" >Clear</button>
+     <!-- <button id="cancelBtn" aria-label="Cancel" class="pallette-btn">Cancel</button>-->
+      <button id="citeBtn" aria-label="Cite" class="quotation-btn">Cite</button>
+    </div>
+  </div>
+  </div>
+
 
 
       
