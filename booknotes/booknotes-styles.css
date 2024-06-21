@@ -468,3 +468,33 @@ overflow-y: clip;
 }
 
 
+
+
+.highlight-green {
+  background-color: rgba(1, 151, 1, 0.841);
+  color: var(--true);
+  cursor:pointer;
+}
+
+.highlight-red {
+  background-color: rgba(255, 0, 0, 0.768);
+  color: var(--true);
+  cursor:pointer;
+  height: fit-content;
+}
+
+.highlight-blue {
+  background-color: #2daee5;
+  color: var(--true);
+  cursor:pointer;
+  height: fit-content;
+}
+
+.highlight-yellow {
+  background-color: rgba(255, 255, 0, 0.77);
+  color: rgb(51, 51, 51);
+  cursor:pointer;
+  height: fit-content;
+}
+
+

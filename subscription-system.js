@@ -8,7 +8,6 @@ https://api.earthen.io
 
 -----------------------------*/
 
- 
 function checkRegistrationStatus() {
     const earthenRegistration = localStorage.getItem('earthenRegistration');
   
